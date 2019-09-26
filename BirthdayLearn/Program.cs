@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BirthdayLearn
 {
     class Program
-    {// this is part of the new features wooooo!
+    {
         static void Main(string[] args)
         {
             //Step 1: Read in Name Files in Array
@@ -25,6 +25,7 @@ namespace BirthdayLearn
             for (int x = 0; x < Names.Length; x++)//go through each name and do the below stuff with it. x is the current iteration count. It counts up with every loop until the condition is no longer met
             {
 
+                //Step 3:Randomly Choose a Statement
                 int index = r.Next(0, count);  //tell it to pick a name between 0 and whatever count is. if Count is 6 then choose either 0,1,2,3,4, or 5
                 string statement = BirthdayStatements[index];// grab the statement that is located at the randomly chosen index
                 string name = Names[x]; // gets name we want to replace with from Names array
@@ -33,7 +34,7 @@ namespace BirthdayLearn
                 NewBirthdayStatements[x] = UpdatedStatement;// place new statement inside New BirthdayStatements array. 
 
             }     
-            // another change!
+
             //Step 5: Output Updated Statement into a File
             File.AppendAllLines(@"NewBirthdayStatments.txt", NewBirthdayStatements, Encoding.UTF8);// push new birthday statement array into txt file
 
